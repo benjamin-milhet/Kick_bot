@@ -28,10 +28,18 @@ bot.on('ready', function () {
 bot.on('message', function (message) {
     kick.parse(message)
 
+    /*if(message.client.user.id == bot.user.id){
+
+    }    */  
+
+    
+
+})
+
+bot.on('messageReactionAdd', function (message) {
     if(message.client.user.id == bot.user.id){
         react.parse(message)
-
-    }      
+    }
 
     
 

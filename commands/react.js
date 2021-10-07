@@ -17,8 +17,7 @@ module.exports = class reactCommand extends Command{
 
     //Choisit random 5 messages depuis le fichier json a envoyer en dm a un membre du serveur
     static action(message){
-            message.react("✅");
-            message.react("❌");
+            
         
 
 

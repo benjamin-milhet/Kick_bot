@@ -31,7 +31,18 @@ module.exports = class kickCommand extends Command{
             } else {
                 let url = 'https://tenor.com/view/cat-blind-flashbang-light-mode-gif-21281004';
                 message.channel.send(url);
-                message.channel.send("Voulez-vous exclure **" + destinataire.user.username + "** du salon vocal ?");
+                message.channel.send("Voulez-vous exclure **" + destinataire.user.username + "** du salon vocal ?")
+                .then(message => {
+                    message.react("✅");
+                    message.react("❌");
+                    message.on('messageReactionAdd', (reaction, user) => {
+                        // on vérifie que ce soit bien la bonne réaction et on ne compte pas celui du bot
+                          /*if (reaction.emoji.name === TonEmoji && user.id !== bot.user.id) {*/
+                              // ici tu ajoute ce que ton bot doit faire quand il y a la bonne réaction
+                              console.log("test");
+                          /*}*/
+                        })
+                });
 
                 //Permet de chercher dans quelle salon vocale est la personne qui execute cette commande
                 for (let i = 0; i<message.guild.channels.cache.filter(function (channel) {
