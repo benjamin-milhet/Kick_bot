@@ -46,7 +46,7 @@ bot.on('message', function (message) {
 })*/
 
 bot.on('messageReactionAdd', (reaction, user) => {
-  if (reaction.emoji.name === "✅") {
+  if (reaction.emoji.name === "✅" || reaction.emoji.name === "❌") {
     //console.log(reaction.message.content);
     react.parse(reaction.message);
   }

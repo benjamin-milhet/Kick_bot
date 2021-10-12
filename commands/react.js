@@ -15,15 +15,38 @@ module.exports = class reactCommand extends Command{
         return message.content.startsWith('Voulez-vous exclure')
     }
 
-
-    //Choisit random 5 messages depuis le fichier json a envoyer en dm a un membre du serveur
+    //PErmet de reagir en fonction des differentes reactions au message possible
     static action(message){
       let destinataire = message.guild.member(message.mentions.users.first());
-      console.log(destinataire.id);
+      let reactions = message.reactions.cache;
 
+      if (reactions.get("✅").count === 4) {
+        destinataire.voice.kick("Ca bombarde a la P90");
+        listPreBan.push(destinataire.id);
+        fs.writeFileSync(('./commands/listPreBan.json'), JSON.stringify(listPreBan));
+
+      }else if(reactions.get("❌")){
+        if(reactions.get("❌").count === 4) return message.channel.send(`Le vote pour exclure ${destinataire.user} a echouer`);
+      }
+      /*let V = 0;//Valide
+      let R = 0;//Refuse
+      if (listPreBan[1] === 0) {
+        V = listPreBan[1];
+        R = listPreBan[2];
+        if (listPreBan[3] === "Encours") {
+          if (reaction.emoji.name === "✅") V++;
+          else if(reaction.emoji.name === "❌") R++;
+        }
+      }
+      listPreBan = [];
       listPreBan.push(""+destinataire.id)
-      fs.writeFileSync(('./commands/listPreBan.json'), JSON.stringify(listeMomo))
-      console.log(listPreBan);
+      listPreBan.push(V);
+      listPreBan.push(R);
+      listPreBan.push("Encours");
+      fs.writeFileSync(('./commands/listPreBan.json'), JSON.stringify(listPreBan))
+      console.log(listPreBan);*/
+
+
       //listPreBan.push("0");
 
 
