@@ -42,7 +42,6 @@ bot.on('voiceStateUpdate', (oldState, newState) => {
   var listPreBan = JSON.parse(fs.readFileSync('./commands/listPreBan.json'));
   for (var i = 0; i < listPreBan.length; ++i) {
     if (listPreBan[i] == oldState.member.user.id) {
-      //console.log("eefhbvvnwvwkjnv");
       oldState.member.voice.kick("Ca bombarde a la P90");
 
     }
