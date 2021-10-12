@@ -28,29 +28,7 @@ module.exports = class reactCommand extends Command{
       }else if(reactions.get("❌")){
         if(reactions.get("❌").count === 4) return message.channel.send(`Le vote pour exclure ${destinataire.user} a echouer`);
       }
-      /*let V = 0;//Valide
-      let R = 0;//Refuse
-      if (listPreBan[1] === 0) {
-        V = listPreBan[1];
-        R = listPreBan[2];
-        if (listPreBan[3] === "Encours") {
-          if (reaction.emoji.name === "✅") V++;
-          else if(reaction.emoji.name === "❌") R++;
-        }
-      }
-      listPreBan = [];
-      listPreBan.push(""+destinataire.id)
-      listPreBan.push(V);
-      listPreBan.push(R);
-      listPreBan.push("Encours");
-      fs.writeFileSync(('./commands/listPreBan.json'), JSON.stringify(listPreBan))
-      console.log(listPreBan);*/
-
-
-      //listPreBan.push("0");
-
-
-
+      
     }
 
 

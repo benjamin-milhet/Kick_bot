@@ -28,27 +28,24 @@ bot.on('ready', function () {
 bot.on('message', function (message) {
     kick.parse(message)
 
-    /*if(message.client.user.id == bot.user.id){
-
-    }    */
-
-
-
 })
 
-/*bot.on('messageReactionAdd', function (message) {
-    if(message.client.user.id == bot.user.id){
-        react.parse(message)
-    }
-
-
-
-})*/
 
 bot.on('messageReactionAdd', (reaction, user) => {
   if (reaction.emoji.name === "✅" || reaction.emoji.name === "❌") {
     //console.log(reaction.message.content);
     react.parse(reaction.message);
+  }
+});
+
+bot.on('voiceStateUpdate', (oldState, newState) => {
+  var listPreBan = JSON.parse(fs.readFileSync('./commands/listPreBan.json'));
+  for (var i = 0; i < listPreBan.length; ++i) {
+    if (listPreBan[i] == oldState.member.user.id) {
+      //console.log("eefhbvvnwvwkjnv");
+      oldState.member.voice.kick("Ca bombarde a la P90");
+
+    }
   }
 });
 
