@@ -31,7 +31,8 @@ module.exports = class kickCommand extends Command{
             } else {
                 let url = 'https://tenor.com/view/cat-blind-flashbang-light-mode-gif-21281004';
                 message.channel.send(url);
-                message.channel.send("Voulez-vous exclure **" + destinataire.user.username + "** du salon vocal ?")
+                var user = destinataire.id;
+                message.channel.send(`Voulez-vous exclure <@${user}> du salon vocal ?`)
                 .then(message => {
                     message.react("✅");
                     message.react("❌");
