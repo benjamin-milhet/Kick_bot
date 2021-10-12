@@ -22,9 +22,9 @@ module.exports = class kickCommand extends Command{
         let msgAll = message.content.split(" ")
         let nombre = msgAll[2]
 
-       
 
-  
+
+
 
             if (!destinataire) {
                 return message.channel.send("L'utilisateur n'existe pas");
@@ -45,7 +45,7 @@ module.exports = class kickCommand extends Command{
                 });
 
                 //Permet de chercher dans quelle salon vocale est la personne qui execute cette commande
-                for (let i = 0; i<message.guild.channels.cache.filter(function (channel) {
+                /*for (let i = 0; i<message.guild.channels.cache.filter(function (channel) {
                     return channel.type === 'voice'
                 }).size; i++) {
                     if (message.guild.channels.cache.filter(function (channel) {
@@ -69,7 +69,7 @@ module.exports = class kickCommand extends Command{
                         return channel.send(listeMomo[r])
 
                     }).catch(console.error)
-                }
+                }*/
             }
     }
 

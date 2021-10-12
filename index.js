@@ -9,7 +9,7 @@ class test {
     static getBot(){
         return bot;
     }
-    
+
 }
 
 var fs = require('fs');
@@ -30,20 +30,26 @@ bot.on('message', function (message) {
 
     /*if(message.client.user.id == bot.user.id){
 
-    }    */  
+    }    */
 
-    
+
 
 })
 
-bot.on('messageReactionAdd', function (message) {
+/*bot.on('messageReactionAdd', function (message) {
     if(message.client.user.id == bot.user.id){
         react.parse(message)
     }
 
-    
 
-})
+
+})*/
+
+bot.on('messageReactionAdd', (reaction, user) => {
+  if (reaction.emoji.name === "✅") {
+
+  }
+});
 
 
 bot.login(token)
