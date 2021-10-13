@@ -12,6 +12,8 @@
 ### Installation 
 
 ```
-
+ - npm install --save discord.js
+ - git clone https://github.com/Orchanyne/kickbot
+ - node index.js
 ```
 
