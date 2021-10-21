@@ -13,7 +13,7 @@
 
 ```
  - npm install --save discord.js
- - git clone https://github.com/Orchanyne/kickbot
+ - git clone https://github.com/Orchanyne/Kick_bot
  - Ajouter un fichier "token.json" avec le token de votre bot discord à la racine du projet
  - node index.js
 ```
